@@ -10,7 +10,7 @@ $factory->define(Company::class, function (Faker $faker) {
     return [
         'name' => $faker->company(),
         'email' => $faker->email(),
-        'logo' => $faker->imageUrl($width = 640, $height = 480),
+        'logo' => 'https://picsum.photos/id/'.rand(1,100).'/600',
         'website' => $faker->domainName(),
     ];
 });

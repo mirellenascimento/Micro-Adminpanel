@@ -11,7 +11,7 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Company::class, 10)
+        factory(App\Company::class, 20)
         ->create()
         ->each(function ($company) {
             $company->save();

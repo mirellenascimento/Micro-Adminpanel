@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::resource('companies', 'CompanyController')->except(['index', 'show'])->middleware('auth');
+Route::resource('companies', 'CompanyController')->only(['index', 'show']);
+
+Route::resource('employees', 'EmployeeController')->except(['index', 'show'])->middleware('auth');
+Route::resource('employees', 'EmployeeController')->only(['index', 'show']);
