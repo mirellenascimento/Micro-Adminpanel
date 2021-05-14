@@ -9,9 +9,9 @@ class Employee extends Model
     protected $table = 'employees';
 
     public function getCompany(){
-        return $this->belongsTo('App\Company');
+        return $this->belongsTo(Company::class, 'company_id', 'id');
     }
 
-    protected $fillable = ['firstname','lastname','email','phone','company_id'];
+    protected $fillable = ['first_name','last_name','email','phone','company_id'];
 
 }

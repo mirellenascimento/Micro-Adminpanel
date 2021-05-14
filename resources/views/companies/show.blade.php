@@ -16,13 +16,15 @@
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
+              <h3>Employess</h3><br>
               @foreach($company->getEmployee as $emp)
-              <a href="{{route('employees.show', $emp->id)}}">{{$emp->first_name}} {{$emp->last_name}}</a><br>
+              <p >{{$emp->first_name}} {{$emp->last_name}}</p><br>
               @endforeach
             </li>
           </ul>
           <div class="card-body d-flex justify-content-around align-items-center">
             <a href="{{route('companies.index', $company->id)}}" class="btn btn-outline-primary">See All Companies</a>
+            <a href="{{route('employees.index', $company->id)}}" class="btn btn-outline-primary">See All Employees</a>
             @auth
             <a href="{{route('companies.edit', $company->id)}}" class="btn btn-outline-primary">Edit Company</a>
             <a href="{{route('companies.create')}}" class="btn btn-outline-primary">Create New Company</a>
